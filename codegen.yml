@@ -1,0 +1,27 @@
+overwrite: true
+schema: "schema.docs.graphql"
+documents:
+  - "components/**/*.tsx"
+  - "pages/**/*.tsx"
+generates:
+  lib/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node
+config:
+  gqlImport: "@apollo/client/core#gql"
+  nonOptionalTypename: true
+  enumsAsTypes: true
+  # NOTE: undefinedに寄せるため
+  maybeValue: T
+  # NOTE: typed-document-nodeでフラグメントが重複しないようするため
+  # SEE: https://github.com/dotansimha/graphql-typed-document-node/issues/41#issuecomment-827575699
+  documentMode: graphQLTag
+  # NOTE: graphql-ruby独自タイプのマッピング
+  scalars:
+    ISO8601Date: string
+    ISO8601DateTime: string
+# hooks:
+#   afterOneFileWrite:
+#     - eslint --fix
