@@ -2,8 +2,8 @@ import { useQuery } from '@apollo/client'
 import { gql } from '@apollo/client/core'
 import Link from 'next/link'
 import { useMemo } from 'react'
-import Layout from '../components/Layout'
-import { RepositoriesDocument } from '../lib/graphql/generated'
+import Layout from '@/components/Layout'
+import { RepositoriesDocument } from '@/lib/graphql/generated'
 
 gql`
 query repositories {
@@ -36,7 +36,7 @@ const IndexPage = () => {
       <ul>
         {repositories.map((repository) => (
           <li key={repository.id}>
-            <Link href={`/repositories/${repository.name}`}>
+            <Link href={`/repositories/${repository.name}`} as={`/repositories/${repository.name}`}>
               <a>{repository.name}</a>
             </Link>
           </li>

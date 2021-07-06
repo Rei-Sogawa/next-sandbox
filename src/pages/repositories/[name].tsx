@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client"
 import { gql } from "@apollo/client/core"
 import { useRouter } from "next/dist/client/router"
-import { RepositoryDocument } from "../../lib/graphql/generated"
+import { RepositoryDocument } from "@/lib/graphql/generated"
 
 gql`
 fragment repository on Repository {

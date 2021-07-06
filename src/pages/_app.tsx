@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client'
-import { createApolloClient } from '../lib/apollo'
+import { createApolloClient } from '@/lib/apollo'
 
 const client = createApolloClient()
 
