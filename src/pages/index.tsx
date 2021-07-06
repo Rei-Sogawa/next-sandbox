@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useMemo } from 'react'
 import Layout from '@/components/Layout'
 import { RepositoriesDocument } from '@/lib/graphql/generated'
+import { NextPage } from 'next'
 
 gql`
 query repositories {
@@ -20,7 +21,7 @@ query repositories {
 }
 `
 
-const IndexPage = () => {
+const IndexPage: NextPage = () => {
   const { data, loading } = useQuery(RepositoriesDocument)
   const repositories = useMemo(() => {
     if (!data?.user?.repositories?.edges) return []

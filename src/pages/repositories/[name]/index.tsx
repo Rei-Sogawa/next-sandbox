@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client"
 import { gql } from "@apollo/client/core"
 import { useRouter } from "next/dist/client/router"
 import { RepositoryDocument } from "@/lib/graphql/generated"
+import { NextPage } from "next"
 
 gql`
 fragment repository on Repository {
@@ -20,7 +21,7 @@ query repository($name: String!) {
 }
 `
 
-const RepositoryPage = () => {
+const RepositoryPage: NextPage = () => {
   const router = useRouter()
   const { name } = router.query
   const { data, loading } = useQuery(RepositoryDocument, { variables: { name }})
