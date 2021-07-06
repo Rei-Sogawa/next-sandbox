@@ -1,10 +1,10 @@
 overwrite: true
 schema: "schema.docs.graphql"
 documents:
-  - "components/**/*.tsx"
-  - "pages/**/*.tsx"
+  - "src/components/**/*.tsx"
+  - "src/pages/**/*.tsx"
 generates:
-  lib/graphql/generated.ts:
+  src/lib/graphql/generated.ts:
     plugins:
       - typescript
       - typescript-operations
@@ -22,6 +22,6 @@ config:
   scalars:
     ISO8601Date: string
     ISO8601DateTime: string
-# hooks:
-#   afterOneFileWrite:
-#     - eslint --fix
+hooks:
+  afterOneFileWrite:
+    - eslint --fix

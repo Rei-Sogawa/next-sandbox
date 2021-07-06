@@ -1,4 +1,4 @@
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
+import { ApolloClient, createHttpLink, InMemoryCache, NormalizedCacheObject } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 
 const httpLink = createHttpLink({
@@ -17,8 +17,9 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
-export function createApolloClient() {
+export const createApolloClient = (): ApolloClient<NormalizedCacheObject> => {
   return new ApolloClient({
+    // eslint-disable-next-line unicorn/prefer-spread
     link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   })
