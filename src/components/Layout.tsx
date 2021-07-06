@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const Layout: VFC<Props> = ({ children, title = 'This is the default title' }) => (
-  <div>
+  <div className="max-w-screen-lg mx-auto py-16">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />

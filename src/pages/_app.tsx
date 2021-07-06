@@ -3,6 +3,8 @@ import { AppProps } from 'next/app'
 import { VFC } from 'react'
 import { createApolloClient } from '@/lib/apollo'
 
+import '@/styles/globals.css'
+
 const client = createApolloClient()
 
 const App: VFC<AppProps> = ({ Component, pageProps }) => {

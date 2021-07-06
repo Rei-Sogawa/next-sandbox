@@ -34,10 +34,10 @@ const IndexPage: NextPage = () => {
 
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Hello Next.js 👋</h1>
-      <ul>
+      <h1 className="text-4xl font-extrabold">Hello Next.js 👋</h1>
+      <ul className="mt-5 list-inside list-disc">
         {repositories.map((repository) => (
-          <li key={repository.id}>
+          <li key={repository.id} className="text-gray-500 hover:text-gray-900">
             <Link href={`/repositories/${repository.name}`} as={`/repositories/${repository.name}`}>
               {repository.name}
             </Link>
