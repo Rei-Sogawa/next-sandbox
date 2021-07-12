@@ -21804,8 +21804,8 @@ export const RepositoryFragmentDoc = gql`
 ` as unknown as DocumentNode<RepositoryFragment, unknown>
 export const RepositoriesDocument = gql`
   query repositories {
-    user(login: "aki77") {
-      repositories(last: 10) {
+    user(login: "Rei-Sogawa") {
+      repositories(last: 100) {
         edges {
           node {
             id
@@ -21818,7 +21818,7 @@ export const RepositoriesDocument = gql`
 ` as unknown as DocumentNode<RepositoriesQuery, RepositoriesQueryVariables>
 export const RepositoryDocument = gql`
   query repository($name: String!) {
-    user(login: "aki77") {
+    user(login: "Rei-Sogawa") {
       repository(name: $name) {
         ...repository
       }

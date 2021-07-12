@@ -13,7 +13,7 @@ gql`
   }
 
   query repository($name: String!) {
-    user(login: "aki77") {
+    user(login: "Rei-Sogawa") {
       repository(name: $name) {
         ...repository
       }

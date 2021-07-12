@@ -8,8 +8,8 @@ import { RepositoriesDocument } from '@/lib/graphql/generated'
 
 gql`
   query repositories {
-    user(login: "aki77") {
-      repositories(last: 10) {
+    user(login: "Rei-Sogawa") {
+      repositories(last: 100) {
         edges {
           node {
             id
